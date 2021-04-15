@@ -1,4 +1,4 @@
-
+const fs = require("fs");
 //!!HTML ROUTE 
 // GET Notes Route ==> return notes.html
 
