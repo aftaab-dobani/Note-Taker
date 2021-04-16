@@ -4,10 +4,11 @@ const path = require("path");
 
 //DOCUMENTATION
 const app = express(); 
-const PORT = 8080; 
+const PORT = 3000; 
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '/public')));
 //add middleware for public folder
 
 //!!HTML ROUTE 
