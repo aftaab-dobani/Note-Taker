@@ -24,15 +24,14 @@ app.get('*', (req, res) => {
 
 //!!API ROUTE
 // GET /api/notes ==> read 'db.json and return all saved notes
-//module.exports = (app) => {
+app.get('/api/notes', (req, res) => res.json(notes));
 
-// app.get('/api/notes', (req, res) =>
+
 
 // 'POST /api/notes ==> receive a new note to save to on the request body and add it to the db.json file. *Look into NPM packages for unique ID for notes*
-//app.post('/api/notes', (req, res) => 
-//res.json(db));
+app.post('/api/notes')
 
-
+//PORT TO LISTEN 
 app.listen(PORT, () => {
     console.log(`App listening on PORT: ${PORT}`);
   }); 
