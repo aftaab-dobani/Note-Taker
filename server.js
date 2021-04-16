@@ -13,15 +13,7 @@ app.use(express.json());
 app.use(express.static("public"));
 //add middleware for public folder
 
-//!!HTML ROUTE
-// GET Notes Route ==> return notes.html
-app.get("/notes", (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/notes.html"));
-});
-// GET * ==> return index.html
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./public/index.html"));
-// });
+
 
 //!!API ROUTE
 // GET /api/notes ==> read 'db.json and return all saved notes
@@ -48,6 +40,17 @@ app.post("/api/notes", (req, res) => {
 // 3. JSON.parse
 // 4.
 
+//!!HTML ROUTE
+// GET Notes Route ==> return notes.html
+app.get("/notes", (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/notes.html"));
+});
+// GET * ==> return index.html
+ app.get("*", (req, res) => {
+   res.sendFile(path.join(__dirname, "./public/index.html"));
+ });
+
+ 
 //PORT TO LISTEN
 app.listen(PORT, () => {
   console.log(`App listening on PORT: ${PORT}`);
