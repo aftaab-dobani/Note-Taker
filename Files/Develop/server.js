@@ -1,6 +1,7 @@
 const express = require('express');
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
+const uniqid = require('uniqid');
 
 //DOCUMENTATION
 const app = express(); 
@@ -29,7 +30,9 @@ app.get('/api/notes', (req, res) => res.json(notes));
 
 
 // 'POST /api/notes ==> receive a new note to save to on the request body and add it to the db.json file. *Look into NPM packages for unique ID for notes*
-app.post('/api/notes')
+app.post('/api/notes', (req, res) => {
+
+})
 
 //PORT TO LISTEN 
 app.listen(PORT, () => {
